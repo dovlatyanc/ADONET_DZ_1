@@ -386,8 +386,7 @@ namespace StudentsDB
         }
         public void SelectSubject()
         {
-            string sqlSelect = "SELECT DISTINCT MinSubjectName FROM StudentGrades " +
-                "WHERE AverageScore IN (SELECT MIN(AverageScore)   FROM StudentGrades  GROUP BY MinSubjectName);";
+            string sqlSelect = "SELECT DISTINCT MinSubjectName FROM StudentGrades  WHERE AverageScore IN (SELECT MIN(AverageScore)   FROM StudentGrades  GROUP BY MinSubjectName);";
             try
             {
                 connection.Open();
